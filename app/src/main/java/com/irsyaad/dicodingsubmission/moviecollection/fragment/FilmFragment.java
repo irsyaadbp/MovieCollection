@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,7 @@ import com.irsyaad.dicodingsubmission.moviecollection.view.MainView;
  */
 public class FilmFragment extends Fragment implements MainView {
     private RecyclerView recyclerView;
-    private FilmAdapter listHeroAdapter;
+    private FilmAdapter listFilmAdapter;
 
     public FilmFragment() {
         // Required empty public constructor
@@ -36,7 +37,14 @@ public class FilmFragment extends Fragment implements MainView {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_film, container, false);
+        View view =  inflater.inflate(R.layout.fragment_film, container, false);
+        recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        listFilmAdapter = new FilmAdapter(getContext());
+        Log.d("halo", "ini oncreateview");
+        return view;
     }
 
     @Override
@@ -44,18 +52,16 @@ public class FilmFragment extends Fragment implements MainView {
         super.onViewCreated(view, savedInstanceState);
         final MainPresenter presenter = new MainPresenter(this);
         presenter.getDataFilm();
+        Log.d("halo", "ini onviewcreated");
 
-        recyclerView = view.findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        listHeroAdapter = new FilmAdapter(getContext());
 
     }
 
     @Override
     public void getData(MainModel model) {
-        listHeroAdapter.setListFilm(model.getFilm());
-        recyclerView.setAdapter(listHeroAdapter);
+        listFilmAdapter.setListFilm(model.getFilm());
+        recyclerView.setAdapter(listFilmAdapter);
+        Log.d("halo", "ini getdata");
+
     }
 }
