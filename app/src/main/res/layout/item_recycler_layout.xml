@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/img_poster"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:background="@color/colorAccent"
+                android:contentDescription="@string/poster_image_recyclerview"/>
+            <TextView
+                android:id="@+id/text_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rating_layout"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textStyle="bold"
+                android:background="@drawable/background_rating"
+                android:paddingTop="@dimen/eight"
+                android:paddingEnd="@dimen/sixteen"
+                android:paddingStart="@dimen/eight"
+                android:paddingBottom="@dimen/eight"
+                android:textColor="@color/colorYellow"
+                android:drawableStart="@drawable/ic_star_24dp" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/eight"
+            android:paddingBottom="@dimen/eight"
+            android:paddingLeft="@dimen/sixteen"
+            android:paddingRight="@dimen/sixteen">
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_layout"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/text_genres"
+                android:layout_marginTop="@dimen/eight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/genre_layout"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            <TextView
+                android:id="@+id/text_overview"
+                android:layout_marginTop="@dimen/sixteen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/overview_layout"
+                android:ellipsize="end"
+                android:maxLines="3" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

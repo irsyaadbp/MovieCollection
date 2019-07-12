@@ -3,12 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.FilmFragment">
+    tools:context=".fragment.FilmFragment"
+    android:paddingTop="@dimen/eight"
+    android:paddingEnd="@dimen/sixteen"
+    android:paddingStart="@dimen/sixteen"
+    android:paddingBottom="@dimen/eight">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/film_title" />
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:listitem="@layout/item_recycler_layout">
+
+</androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>

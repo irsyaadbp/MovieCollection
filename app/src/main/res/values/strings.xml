@@ -5,6 +5,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="film_title">Film</string>
     <string name="tvshow_title">TV Show</string>
+    <string name="title_layout">Title Layout</string>
+    <string name="poster_image_recyclerview">Poster Image Recyclerview</string>
+    <string name="genre_layout">Genre Layout</string>
+    <string name="rating_layout">8.2</string>
+    <string name="overview_layout">Overview Layout</string>
 
 
 </resources>
