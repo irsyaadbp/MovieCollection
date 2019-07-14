@@ -35,7 +35,6 @@ public class FilmFragment extends Fragment implements MainView {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
         View view =  inflater.inflate(R.layout.fragment_film, container, false);
         recyclerView = view.findViewById(R.id.recyclerView);
@@ -43,25 +42,25 @@ public class FilmFragment extends Fragment implements MainView {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         listFilmAdapter = new FilmAdapter(getContext());
-        Log.d("halo", "ini oncreateview");
+
+        final MainPresenter presenter = new MainPresenter(this);
+        presenter.getDataFilm();
+
         return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         final MainPresenter presenter = new MainPresenter(this);
         presenter.getDataFilm();
-        Log.d("halo", "ini onviewcreated");
-
-
     }
 
     @Override
     public void getData(MainModel model) {
         listFilmAdapter.setListFilm(model.getFilm());
         recyclerView.setAdapter(listFilmAdapter);
-        Log.d("halo", "ini getdata");
 
     }
 }

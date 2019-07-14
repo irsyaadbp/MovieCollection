@@ -50,7 +50,7 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.FilmViewHolder
 
         Glide.with(context)
                 .load(getListFilm().get(position).getPoster())
-                .apply(new RequestOptions().override(55, 55))
+                .centerCrop()
                 .into(holder.imgPoster);
     }
 
