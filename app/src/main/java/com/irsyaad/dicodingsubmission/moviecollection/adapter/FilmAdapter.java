@@ -1,6 +1,7 @@
 package com.irsyaad.dicodingsubmission.moviecollection.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,25 +9,26 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.irsyaad.dicodingsubmission.moviecollection.R;
+import com.irsyaad.dicodingsubmission.moviecollection.activity.DetailActivity;
 import com.irsyaad.dicodingsubmission.moviecollection.model.film.Film;
 
 import java.util.ArrayList;
 
 public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.FilmViewHolder> {
 
-    Context context;
-    ArrayList<Film> listFilm;
+    private Context context;
+    private ArrayList<Film> listFilm;
 
     public FilmAdapter(Context context) {
         this.context = context;
     }
 
-    public ArrayList<Film> getListFilm() {
+    private ArrayList<Film> getListFilm() {
         return listFilm;
     }
 
@@ -42,7 +44,7 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.FilmViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FilmViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FilmViewHolder holder, final int position) {
         holder.txtRating.setText(getListFilm().get(position).getRating());
         holder.txtTitle.setText(getListFilm().get(position).getTitle());
         holder.txtGenres.setText(getListFilm().get(position).getGenres());
@@ -52,6 +54,15 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.FilmViewHolder
                 .load(getListFilm().get(position).getPoster())
                 .centerCrop()
                 .into(holder.imgPoster);
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent move = new Intent(context, DetailActivity.class);
+                move.putExtra(DetailActivity.EXTRA_FILM, getListFilm().get(position));
+                context.startActivity(move);
+            }
+        });
     }
 
     @Override
@@ -59,10 +70,11 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.FilmViewHolder
         return getListFilm().size();
     }
 
-    public class FilmViewHolder extends RecyclerView.ViewHolder {
+    class FilmViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPoster;
         TextView txtRating, txtTitle, txtGenres, txtOverview;
-        public FilmViewHolder(@NonNull View itemView) {
+        CardView cardView;
+        FilmViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imgPoster = itemView.findViewById(R.id.img_poster);
@@ -70,6 +82,7 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.FilmViewHolder
             txtTitle = itemView.findViewById(R.id.text_title);
             txtGenres = itemView.findViewById(R.id.text_genres);
             txtOverview = itemView.findViewById(R.id.text_overview);
+            cardView = itemView.findViewById(R.id.cardview_wrapper);
 
         }
     }
