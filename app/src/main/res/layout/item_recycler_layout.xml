@@ -21,8 +21,8 @@
             android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/img_poster"
-                android:layout_width="145dp"
-                android:layout_height="220dp"
+                android:layout_width="120dp"
+                android:layout_height="170dp"
                 android:contentDescription="@string/poster_image_recyclerview"/>
             <TextView
                 android:id="@+id/text_rating"

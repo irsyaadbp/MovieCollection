@@ -10,6 +10,7 @@
     <string name="rating_layout">8.2</string>
     <string name="overview_layout">Overview Layout</string>
     <string name="description_image">Description Image</string>
+    <string name="genres">Genres</string>
 
 
 </resources>

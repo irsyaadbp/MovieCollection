@@ -35,8 +35,8 @@ public class FilmFragment extends Fragment implements MainView {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View view =  inflater.inflate(R.layout.fragment_film, container, false);
+
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
 
@@ -52,9 +52,6 @@ public class FilmFragment extends Fragment implements MainView {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        final MainPresenter presenter = new MainPresenter(this);
-        presenter.getDataFilm();
     }
 
     @Override
