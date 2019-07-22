@@ -17,7 +17,7 @@ import com.irsyaad.dicodingsubmission.moviecollection.model.film.Film;
 
 public class DetailActivity extends AppCompatActivity {
     ImageView imgPoster, imgBackground;
-    TextView txtTitle, txtRating, txtGenres;
+    TextView txtTitle, txtRating, txtGenres, txtOverview, txtDirector, txtStar;
     public static final String EXTRA_FILM = "extra_film";
     Film film;
 
@@ -69,6 +69,9 @@ public class DetailActivity extends AppCompatActivity {
         txtTitle = findViewById(R.id.txt_title);
         txtRating = findViewById(R.id.txt_rating);
         txtGenres = findViewById(R.id.txt_genres);
+        txtDirector = findViewById(R.id.txt_director);
+        txtStar = findViewById(R.id.txt_star);
+        txtOverview = findViewById(R.id.txt_overview);
     }
 
     private void setLayout(){
@@ -85,5 +88,8 @@ public class DetailActivity extends AppCompatActivity {
         txtTitle.setText(film.getTitle());
         txtRating.setText(film.getRating());
         txtGenres.setText(film.getGenres());
+        txtDirector.setText(film.getDirector());
+        txtStar.setText(film.getStar());
+        txtOverview.setText(film.getOverview());
     }
 }

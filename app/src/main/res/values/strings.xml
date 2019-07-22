@@ -11,6 +11,9 @@
     <string name="overview_layout">Overview Layout</string>
     <string name="description_image">Description Image</string>
     <string name="genres">Genres</string>
+    <string name="overview">Overview</string>
+    <string name="director">Director</string>
+    <string name="star">Star</string>
 
 
 </resources>
