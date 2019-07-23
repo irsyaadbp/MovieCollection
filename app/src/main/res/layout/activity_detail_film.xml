@@ -86,7 +86,6 @@
                     android:layout_height="170dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginBottom="24dp"
-                    android:elevation="3dp"
                     android:contentDescription="@string/description_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -158,18 +157,28 @@
             android:paddingRight="@dimen/sixteen"
             android:paddingBottom="@dimen/eight">
 
+            <View
+                android:id="@+id/viewTop"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/title_director"
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:layout_marginTop="24dp"
                 android:text="@string/director"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/viewTop" />
 
             <TextView
                 android:id="@+id/txt_director"
@@ -182,7 +191,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintTop_toBottomOf="@+id/title_director" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline2"
@@ -193,16 +202,17 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/title_star"
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="@string/star"
                 android:textStyle="bold"
+                android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/viewTop" />
 
             <TextView
                 android:id="@+id/txt_star"
@@ -214,19 +224,29 @@
                 android:text="@string/star"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                app:layout_constraintTop_toBottomOf="@+id/title_star" />
+
+            <View
+                android:id="@+id/viewMiddle"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/colorView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_director" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/title_overview"
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="24dp"
                 android:text="@string/overview"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_director" />
+                app:layout_constraintTop_toBottomOf="@+id/viewMiddle" />
 
             <TextView
                 android:id="@+id/txt_overview"
@@ -237,10 +257,10 @@
                 android:text="@string/overview"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintTop_toBottomOf="@+id/title_overview" />
 
             <View
-                android:id="@+id/view"
+                android:id="@+id/viewBottom"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_marginTop="24dp"
@@ -251,7 +271,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txt_overview" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/title_language"
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -261,7 +281,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view" />
+                app:layout_constraintTop_toBottomOf="@+id/viewBottom" />
 
             <TextView
                 android:id="@+id/txt_language"
@@ -273,10 +293,10 @@
                 android:text="@string/original_language"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/title_language" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/title_runtime"
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -286,7 +306,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/view" />
+                app:layout_constraintTop_toBottomOf="@+id/viewBottom" />
 
             <TextView
                 android:id="@+id/txt_runtime"
@@ -299,10 +319,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/title_runtime" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/title_budget"
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -325,10 +345,10 @@
                 android:text="@string/budget"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                app:layout_constraintTop_toBottomOf="@+id/title_budget" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/title_revenue"
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -350,7 +370,7 @@
                 android:text="@string/revenue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                app:layout_constraintTop_toBottomOf="@+id/title_revenue" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
