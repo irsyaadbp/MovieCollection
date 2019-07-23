@@ -14,6 +14,10 @@
     <string name="overview">Overview</string>
     <string name="director">Director</string>
     <string name="star">Star</string>
+    <string name="original_language">Original Language</string>
+    <string name="runtime">Runtime</string>
+    <string name="budget">Budget</string>
+    <string name="revenue">Revenue</string>
 
 
 </resources>

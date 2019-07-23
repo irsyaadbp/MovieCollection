@@ -7,4 +7,5 @@
     <color name="colorYellow">#FFC107</color>
     <color name="colorTransparent">#00000000</color>
     <color name="colorTransparent70">#B3000000</color>
+    <color name="colorView">#DFDFDF</color>
 </resources>

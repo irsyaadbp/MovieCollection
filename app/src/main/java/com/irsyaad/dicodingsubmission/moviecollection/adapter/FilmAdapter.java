@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.irsyaad.dicodingsubmission.moviecollection.R;
-import com.irsyaad.dicodingsubmission.moviecollection.activity.DetailActivity;
+import com.irsyaad.dicodingsubmission.moviecollection.activity.DetailFilmActivity;
 import com.irsyaad.dicodingsubmission.moviecollection.model.film.Film;
 
 import java.util.ArrayList;
@@ -58,8 +58,8 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.FilmViewHolder
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent move = new Intent(context, DetailActivity.class);
-                move.putExtra(DetailActivity.EXTRA_FILM, getListFilm().get(position));
+                Intent move = new Intent(context, DetailFilmActivity.class);
+                move.putExtra(DetailFilmActivity.EXTRA_FILM, getListFilm().get(position));
                 context.startActivity(move);
             }
         });

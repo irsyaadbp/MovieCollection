@@ -15,9 +15,11 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.irsyaad.dicodingsubmission.moviecollection.R;
 import com.irsyaad.dicodingsubmission.moviecollection.model.film.Film;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailFilmActivity extends AppCompatActivity {
     ImageView imgPoster, imgBackground;
-    TextView txtTitle, txtRating, txtGenres, txtOverview, txtDirector, txtStar;
+    TextView txtTitle, txtRating, txtGenres, txtOverview, txtDirector, txtStar, txtLanguage,
+            txtRuntime, txtBudget, txtRevenue;
+
     public static final String EXTRA_FILM = "extra_film";
     Film film;
 
@@ -25,7 +27,7 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_detail_film);
 
         film = getIntent().getParcelableExtra(EXTRA_FILM);
 
@@ -72,12 +74,17 @@ public class DetailActivity extends AppCompatActivity {
         txtDirector = findViewById(R.id.txt_director);
         txtStar = findViewById(R.id.txt_star);
         txtOverview = findViewById(R.id.txt_overview);
+        txtLanguage = findViewById(R.id.txt_language);
+        txtRuntime = findViewById(R.id.txt_runtime);
+        txtBudget = findViewById(R.id.txt_budget);
+        txtRevenue = findViewById(R.id.txt_revenue);
     }
 
     private void setLayout(){
-
         Glide.with(this)
                 .load(film.getPoster())
+                .placeholder(R.drawable.loading)
+                .error(R.drawable.error)
                 .centerCrop()
                 .into(imgPoster);
         Glide.with(this)
@@ -91,5 +98,10 @@ public class DetailActivity extends AppCompatActivity {
         txtDirector.setText(film.getDirector());
         txtStar.setText(film.getStar());
         txtOverview.setText(film.getOverview());
+        txtLanguage.setText(film.getLanguage());
+        txtRuntime.setText(film.getRuntime());
+        txtBudget.setText(film.getBudget());
+        txtRevenue.setText(film.getRevenue());
+
     }
 }

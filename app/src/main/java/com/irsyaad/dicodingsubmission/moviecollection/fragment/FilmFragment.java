@@ -9,21 +9,20 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.irsyaad.dicodingsubmission.moviecollection.R;
 import com.irsyaad.dicodingsubmission.moviecollection.adapter.FilmAdapter;
-import com.irsyaad.dicodingsubmission.moviecollection.model.MainModel;
-import com.irsyaad.dicodingsubmission.moviecollection.presenter.MainPresenter;
-import com.irsyaad.dicodingsubmission.moviecollection.view.MainView;
+import com.irsyaad.dicodingsubmission.moviecollection.model.film.FilmModel;
+import com.irsyaad.dicodingsubmission.moviecollection.presenter.film.FilmPresenter;
+import com.irsyaad.dicodingsubmission.moviecollection.view.film.FilmView;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FilmFragment extends Fragment implements MainView {
+public class FilmFragment extends Fragment implements FilmView {
     private RecyclerView recyclerView;
     private FilmAdapter listFilmAdapter;
 
@@ -43,7 +42,7 @@ public class FilmFragment extends Fragment implements MainView {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         listFilmAdapter = new FilmAdapter(getContext());
 
-        final MainPresenter presenter = new MainPresenter(this);
+        final FilmPresenter presenter = new FilmPresenter(this);
         presenter.getDataFilm();
 
         return view;
@@ -55,8 +54,8 @@ public class FilmFragment extends Fragment implements MainView {
     }
 
     @Override
-    public void getData(MainModel model) {
-        listFilmAdapter.setListFilm(model.getFilm());
+    public void getDataFilm(FilmModel model) {
+        listFilmAdapter.setListFilm(model.getDataFilm());
         recyclerView.setAdapter(listFilmAdapter);
 
     }
