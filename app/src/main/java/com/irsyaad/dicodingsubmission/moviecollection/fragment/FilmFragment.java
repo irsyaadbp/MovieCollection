@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.irsyaad.dicodingsubmission.moviecollection.R;
-import com.irsyaad.dicodingsubmission.moviecollection.adapter.FilmAdapter;
+import com.irsyaad.dicodingsubmission.moviecollection.adapter.film.FilmAdapter;
 import com.irsyaad.dicodingsubmission.moviecollection.model.film.FilmModel;
 import com.irsyaad.dicodingsubmission.moviecollection.presenter.film.FilmPresenter;
 import com.irsyaad.dicodingsubmission.moviecollection.view.film.FilmView;
@@ -49,14 +49,8 @@ public class FilmFragment extends Fragment implements FilmView {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
-
-    @Override
     public void getDataFilm(FilmModel model) {
         listFilmAdapter.setListFilm(model.getDataFilm());
         recyclerView.setAdapter(listFilmAdapter);
-
     }
 }

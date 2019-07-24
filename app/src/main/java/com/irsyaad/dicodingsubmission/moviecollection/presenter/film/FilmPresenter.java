@@ -15,8 +15,7 @@ public class FilmPresenter {
     }
 
     public void getDataFilm(){
-        ArrayList<Film> film = new ArrayList<>();
-        film.addAll(FilmData.getListData());
+        ArrayList<Film> film = new ArrayList<>(FilmData.getListData());
 
         FilmModel model = new FilmModel(film);
         view.getDataFilm(model);

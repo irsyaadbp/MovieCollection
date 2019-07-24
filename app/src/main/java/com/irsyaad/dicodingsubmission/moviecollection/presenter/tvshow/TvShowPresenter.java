@@ -1,6 +1,7 @@
 package com.irsyaad.dicodingsubmission.moviecollection.presenter.tvshow;
 
 import com.irsyaad.dicodingsubmission.moviecollection.model.tvshow.TvShow;
+import com.irsyaad.dicodingsubmission.moviecollection.model.tvshow.TvShowData;
 import com.irsyaad.dicodingsubmission.moviecollection.model.tvshow.TvShowModel;
 import com.irsyaad.dicodingsubmission.moviecollection.view.tvshow.TvShowView;
 
@@ -13,10 +14,8 @@ public class TvShowPresenter {
         this.view = view;
     }
 
-    public void getDataFilm(){
-        ArrayList<TvShow> tvShows = new ArrayList<>();
-        //TODO add list data if tvshow data has been added
-//        tvShows.addAll(TvShow.getListData());
+    public void getDataTv(){
+        ArrayList<TvShow> tvShows = new ArrayList<>(TvShowData.getListData());
 
         TvShowModel model = new TvShowModel(tvShows);
         view.getDataTv(model);

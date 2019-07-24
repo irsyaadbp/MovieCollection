@@ -9,7 +9,7 @@ public class TvShowModel {
         this.tvShows = tvShows;
     }
 
-    public ArrayList<TvShow> getTvShows() {
+    public ArrayList<TvShow> getDataTvShows() {
         return tvShows;
     }
 }

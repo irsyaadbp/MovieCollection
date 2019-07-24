@@ -31,8 +31,6 @@ public class DetailFilmActivity extends AppCompatActivity {
 
         film = getIntent().getParcelableExtra(EXTRA_FILM);
 
-        Toast.makeText(this, "kamu klik "+film.getTitle(), Toast.LENGTH_SHORT).show();
-
         final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

@@ -1,4 +1,4 @@
-package com.irsyaad.dicodingsubmission.moviecollection.adapter;
+package com.irsyaad.dicodingsubmission.moviecollection.adapter.film;
 
 import android.content.Context;
 import android.content.Intent;
