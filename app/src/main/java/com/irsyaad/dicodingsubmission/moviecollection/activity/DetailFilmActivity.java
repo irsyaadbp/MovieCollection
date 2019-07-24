@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.appbar.AppBarLayout;
@@ -17,7 +16,7 @@ import com.irsyaad.dicodingsubmission.moviecollection.model.film.Film;
 
 public class DetailFilmActivity extends AppCompatActivity {
     ImageView imgPoster, imgBackground;
-    TextView txtTitle, txtRating, txtGenres, txtOverview, txtDirector, txtStar, txtLanguage,
+    TextView txtTitle, txtYear, txtRating, txtGenres, txtOverview, txtDirector, txtStar, txtLanguage,
             txtRuntime, txtBudget, txtRevenue;
 
     public static final String EXTRA_FILM = "extra_film";
@@ -67,6 +66,7 @@ public class DetailFilmActivity extends AppCompatActivity {
         imgBackground = findViewById(R.id.img_background);
 
         txtTitle = findViewById(R.id.txt_title);
+        txtYear = findViewById(R.id.txt_year);
         txtRating = findViewById(R.id.txt_rating);
         txtGenres = findViewById(R.id.txt_genres);
         txtDirector = findViewById(R.id.txt_director);
@@ -91,6 +91,7 @@ public class DetailFilmActivity extends AppCompatActivity {
                 .into(imgBackground);
 
         txtTitle.setText(film.getTitle());
+        txtYear.setText(film.getYear());
         txtRating.setText(film.getRating());
         txtGenres.setText(film.getGenres());
         txtDirector.setText(film.getDirector());

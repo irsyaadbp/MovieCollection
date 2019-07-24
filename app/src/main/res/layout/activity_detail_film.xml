@@ -72,20 +72,21 @@
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@+id/guideline7"
                         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
                     <androidx.constraintlayout.widget.Guideline
                         android:id="@+id/guideline7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        app:layout_constraintGuide_begin="168dp" />
+                        app:layout_constraintGuide_begin="180dp" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <ImageView
                     android:id="@+id/img_poster"
-                    android:layout_width="120dp"
-                    android:layout_height="170dp"
+                    android:layout_width="130dp"
+                    android:layout_height="180dp"
                     android:layout_marginStart="32dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginBottom="28dp"
                     android:contentDescription="@string/description_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -95,13 +96,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_begin="168dp" />
+                    app:layout_constraintGuide_begin="180dp" />
+
+                <TextView
+                    android:id="@+id/txt_year"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/year"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
                 <TextView
                     android:id="@+id/txt_title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="32dp"
+                    android:layout_marginEnd="24dp"
                     android:ellipsize="end"
                     android:maxLines="2"
                     android:text="@string/title_layout"
@@ -110,7 +124,7 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline5"
-                    app:layout_constraintTop_toTopOf="@+id/guideline6" />
+                    app:layout_constraintTop_toBottomOf="@+id/txt_year" />
 
                 <TextView
                     android:id="@+id/txt_rating"
@@ -131,7 +145,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    app:layout_constraintGuide_begin="120dp" />
+                    app:layout_constraintGuide_begin="102dp" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -173,7 +187,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="24dp"
-                android:text="@string/director"
+                android:text="@string/directors"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -182,12 +196,12 @@
 
             <TextView
                 android:id="@+id/txt_director"
-                style="@style/TextAppearance.AppCompat.Caption"
+                style="@style/TextAppearance.AppCompat.Small"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="8dp"
-                android:text="@string/director"
+                android:text="@string/directors"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -207,7 +221,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="@string/star"
+                android:text="@string/stars"
                 android:textStyle="bold"
                 android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -216,12 +230,12 @@
 
             <TextView
                 android:id="@+id/txt_star"
-                style="@style/TextAppearance.AppCompat.Caption"
+                style="@style/TextAppearance.AppCompat.Small"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="4dp"
-                android:text="@string/star"
+                android:text="@string/stars"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toBottomOf="@+id/title_star" />
@@ -234,7 +248,7 @@
                 android:background="@color/colorView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_director" />
+                app:layout_constraintTop_toBottomOf="@id/txt_star" />
 
             <TextView
                 android:id="@+id/title_overview"
@@ -250,7 +264,7 @@
 
             <TextView
                 android:id="@+id/txt_overview"
-                style="@style/TextAppearance.AppCompat.Caption"
+                style="@style/TextAppearance.AppCompat.Small"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="4dp"
@@ -285,7 +299,7 @@
 
             <TextView
                 android:id="@+id/txt_language"
-                style="@style/TextAppearance.AppCompat.Caption"
+                style="@style/TextAppearance.AppCompat.Small"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -310,7 +324,7 @@
 
             <TextView
                 android:id="@+id/txt_runtime"
-                style="@style/TextAppearance.AppCompat.Caption"
+                style="@style/TextAppearance.AppCompat.Small"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -322,7 +336,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/title_runtime" />
 
             <TextView
-                android:id="@+id/title_budget"
+                android:id="@+id/title_original_name"
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -337,7 +351,7 @@
 
             <TextView
                 android:id="@+id/txt_budget"
-                style="@style/TextAppearance.AppCompat.Caption"
+                style="@style/TextAppearance.AppCompat.Small"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -345,10 +359,10 @@
                 android:text="@string/budget"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title_budget" />
+                app:layout_constraintTop_toBottomOf="@+id/title_original_name" />
 
             <TextView
-                android:id="@+id/title_revenue"
+                android:id="@+id/title_status"
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -362,7 +376,7 @@
 
             <TextView
                 android:id="@+id/txt_revenue"
-                style="@style/TextAppearance.AppCompat.Caption"
+                style="@style/TextAppearance.AppCompat.Small"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -370,7 +384,7 @@
                 android:text="@string/revenue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/title_revenue" />
+                app:layout_constraintTop_toBottomOf="@+id/title_status" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

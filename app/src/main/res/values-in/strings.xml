@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movie Collection</string>
+    <string name="budget" translatable="false">Anggaran</string>
+    <string name="creators">Pencipta</string>
+    <string name="description_image">Deskripsi Gambar</string>
+    <string name="directors">Direktur</string>
+    <string name="film_title">Film</string>
+    <string name="genre_layout">Tata letak aliran</string>
+    <string name="genres">Aliran</string>
+    <string name="original_language">Bahasa Asli</string>
+    <string name="original_name">Nama Asli</string>
+    <string name="overview">Ringkasan</string>
+    <string name="overview_layout">Tata letak ringkasan</string>
+    <string name="poster_image_recyclerview">Gambar Poster Recyclreview</string>
+    <string name="revenue">Pendapatan</string>
+    <string name="runtime">Waktu</string>
+    <string name="stars">Pemeran</string>
+    <string name="status">Status</string>
+    <string name="title_layout">Tata letak judul</string>
+    <string name="tvshow_title">Acara TV</string>
+    <string name="change_language">Ganti Bahasa</string>
+    <string name="choose_language">Pilih Bahasa</string>
+    <string name="english">Inggris</string>
+    <string name="indonesian">Bahasa Indonesia</string>
+</resources>
