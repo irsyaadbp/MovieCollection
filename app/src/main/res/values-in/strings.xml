@@ -23,4 +23,5 @@
     <string name="choose_language">Pilih Bahasa</string>
     <string name="english">Inggris</string>
     <string name="indonesian">Bahasa Indonesia</string>
+    <string name="load_image_error">Kesalahan Memuat Gambar</string>
 </resources>

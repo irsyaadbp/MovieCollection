@@ -6,10 +6,10 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.irsyaad.dicodingsubmission.moviecollection.R;
 import com.irsyaad.dicodingsubmission.moviecollection.fragment.FilmFragment;
@@ -21,8 +21,10 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+
     SharedPreferences languagePref;
-    String currentLanguage;
+    String current_language;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +32,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        languagePref = getSharedPreferences("language",MODE_PRIVATE);
-        currentLanguage = languagePref.getString("languageToLoad", Locale.getDefault().getDisplayLanguage());
+        languagePref = getSharedPreferences("CURRENT_LANGUAGE", 0);
+        current_language = languagePref.getString("language", Locale.getDefault().getDisplayLanguage());
 
-        Toast.makeText(this, ""+currentLanguage, Toast.LENGTH_SHORT).show();
+        assert current_language != null;
+        changeLocale(current_language);
 
         setFragment();
     }
@@ -50,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         SmartTabLayout viewPagerTab = findViewById(R.id.viewpagertab);
         viewPagerTab.setViewPager(viewPager);
+
     }
 
     @Override
@@ -62,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = new Intent(this, ChangeLanguageActivity.class);
         startActivity(intent);
+        finish();
         return true;
     }
 
@@ -69,6 +74,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        current_language = languagePref.getString("language", Locale.getDefault().getDisplayLanguage());
 
+        if (current_language == null){
+            setFragment();
+            return;
+        }
+
+        changeLocale(current_language);
     }
+
+    private void changeLocale(String lang) {
+        if (lang.equalsIgnoreCase(""))
+            return;
+        Locale myLocale = new Locale(lang);
+        Locale.setDefault(myLocale);
+        Configuration config = new Configuration();
+        config.locale = myLocale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+    }
+
 }

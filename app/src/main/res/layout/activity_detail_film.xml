@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.DetailFilmActivity">
+    tools:context=".activity.film.DetailFilmActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -29,7 +29,8 @@
                     android:layout_height="match_parent"
                     android:contentDescription="@string/description_image"
                     android:fitsSystemWindows="true"
-                    app:layout_collapseMode="parallax" />
+                    app:layout_collapseMode="parallax"
+                    android:background="@color/colorPrimary"/>
 
                 <ImageView
                     android:id="@+id/imageView"
@@ -89,7 +90,8 @@
                     android:layout_marginBottom="28dp"
                     android:contentDescription="@string/description_image"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:background="@color/colorPrimary"/>
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline5"

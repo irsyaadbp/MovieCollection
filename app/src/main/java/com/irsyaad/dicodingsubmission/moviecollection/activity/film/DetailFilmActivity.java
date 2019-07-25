@@ -1,4 +1,4 @@
-package com.irsyaad.dicodingsubmission.moviecollection.activity;
+package com.irsyaad.dicodingsubmission.moviecollection.activity.film;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -81,13 +81,13 @@ public class DetailFilmActivity extends AppCompatActivity {
     private void setLayout(){
         Glide.with(this)
                 .load(film.getPoster())
-                .placeholder(R.drawable.loading)
-                .error(R.drawable.error)
                 .centerCrop()
+                .error(R.drawable.ic_error_24dp)
                 .into(imgPoster);
         Glide.with(this)
                 .load(film.getPoster())
                 .centerCrop()
+                .error(R.drawable.ic_error_24dp)
                 .into(imgBackground);
 
         txtTitle.setText(film.getTitle());

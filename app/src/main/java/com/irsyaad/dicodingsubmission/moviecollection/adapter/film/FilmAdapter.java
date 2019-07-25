@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.irsyaad.dicodingsubmission.moviecollection.R;
-import com.irsyaad.dicodingsubmission.moviecollection.activity.DetailFilmActivity;
+import com.irsyaad.dicodingsubmission.moviecollection.activity.film.DetailFilmActivity;
 import com.irsyaad.dicodingsubmission.moviecollection.model.film.Film;
 
 import java.util.ArrayList;
@@ -53,6 +53,7 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.FilmViewHolder
         Glide.with(context)
                 .load(getListFilm().get(position).getPoster())
                 .centerCrop()
+                .error(R.drawable.ic_error_24dp)
                 .into(holder.imgPoster);
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {

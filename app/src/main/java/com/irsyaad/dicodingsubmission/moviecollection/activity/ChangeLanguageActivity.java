@@ -3,23 +3,27 @@ package com.irsyaad.dicodingsubmission.moviecollection.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import com.irsyaad.dicodingsubmission.moviecollection.R;
 
 import java.util.Locale;
 import java.util.Objects;
-//TODO TRANSLATOR
+
 public class ChangeLanguageActivity extends AppCompatActivity {
     RadioButton radioEnglish, radioIndonesian;
+    RadioGroup radioGroup;
+
     SharedPreferences languagePref;
-    String CURRENT_LANGUAGE;
+
+    String defaultLanguage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,18 +41,32 @@ public class ChangeLanguageActivity extends AppCompatActivity {
             }
         });
 
-        languagePref = getSharedPreferences("CURRENT_LANGUAGE", MODE_PRIVATE);
-        CURRENT_LANGUAGE = languagePref.getString("current_language", Locale.getDefault().getDisplayLanguage());
+        radioGroup = findViewById(R.id.radio_group);
+        radioEnglish= findViewById(R.id.radio_english);
+        radioIndonesian= findViewById(R.id.radio_indonesian);
 
-        Toast.makeText(this, "previous "+CURRENT_LANGUAGE, Toast.LENGTH_SHORT).show();
+        languagePref = getSharedPreferences("CURRENT_LANGUAGE", 0);
+        defaultLanguage = Locale.getDefault().getDisplayLanguage();
+        String language =languagePref.getString("language", ""+defaultLanguage);
+
+        assert language != null;
+        if (language.equals("en") || language.equals("English")){
+            radioEnglish.setChecked(true);
+        }else {
+            radioIndonesian.setChecked(true);
+        }
 
         onRadioButtonClicked();
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent back = new Intent(this, MainActivity.class);
+        startActivity(back);
+        finish();
+    }
+
     private void onRadioButtonClicked(){
-        RadioGroup radioGroup = findViewById(R.id.radio_group);
-        radioEnglish= findViewById(R.id.radio_english);
-        radioIndonesian= findViewById(R.id.radio_indonesian);
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
@@ -57,14 +75,16 @@ public class ChangeLanguageActivity extends AppCompatActivity {
                 String lang = "";
                 switch (checkedId){
                     case R.id.radio_english :
-//                        Toast.makeText(ChangeLanguageActivity.this, "english", Toast.LENGTH_SHORT).show();
                         lang = "en";
                         break;
                     case R.id.radio_indonesian :
-//                        Toast.makeText(ChangeLanguageActivity.this, "indonesian", Toast.LENGTH_SHORT).show();
                         lang = "in";
                         break;
                 }
+
+                SharedPreferences.Editor editor = languagePref.edit();
+                editor.putString("language", lang);
+                editor.apply();
 
                 changeLocale(lang);
             }
@@ -86,9 +106,5 @@ public class ChangeLanguageActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setTitle(getString(R.string.choose_language));
         radioEnglish.setText(getString(R.string.english));
         radioIndonesian.setText(getString(R.string.indonesian));
-
-        CURRENT_LANGUAGE = languagePref.getString("current_language", Locale.getDefault().getDisplayLanguage());
-        Toast.makeText(this, "after "+CURRENT_LANGUAGE, Toast.LENGTH_SHORT).show();
-
     }
 }

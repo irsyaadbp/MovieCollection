@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.irsyaad.dicodingsubmission.moviecollection.R;
-import com.irsyaad.dicodingsubmission.moviecollection.activity.DetailTvActivity;
+import com.irsyaad.dicodingsubmission.moviecollection.activity.tvshow.DetailTvActivity;
 import com.irsyaad.dicodingsubmission.moviecollection.model.tvshow.TvShow;
 
 import java.util.ArrayList;
@@ -53,6 +53,7 @@ public class TvShowAdapter extends RecyclerView.Adapter<TvShowAdapter.TvShowView
         Glide.with(context)
                 .load(getListTv().get(position).getPoster())
                 .centerCrop()
+                .error(R.drawable.ic_error_24dp)
                 .into(holder.imgPoster);
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {

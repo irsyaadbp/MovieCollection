@@ -1,4 +1,4 @@
-package com.irsyaad.dicodingsubmission.moviecollection.activity;
+package com.irsyaad.dicodingsubmission.moviecollection.activity.tvshow;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -82,10 +82,12 @@ public class DetailTvActivity extends AppCompatActivity {
         Glide.with(this)
                 .load(tvShow.getPoster())
                 .centerCrop()
+                .error(R.drawable.ic_error_24dp)
                 .into(imgPoster);
         Glide.with(this)
                 .load(tvShow.getPoster())
                 .centerCrop()
+                .error(R.drawable.ic_error_24dp)
                 .into(imgBackground);
 
         txtTitle.setText(tvShow.getTitle());

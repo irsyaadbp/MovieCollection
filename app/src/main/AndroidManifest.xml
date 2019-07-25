@@ -12,17 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.ChangeLanguageActivity"
-            android:configChanges="locale"></activity>
+            android:name=".activity.ChangeLanguageActivity"></activity>
         <activity
-            android:name=".activity.DetailTvActivity"
-            android:configChanges="locale"/>
+            android:name=".activity.tvshow.DetailTvActivity" />
         <activity
-            android:name=".activity.DetailFilmActivity"
-            android:configChanges="locale"/>
+            android:name=".activity.film.DetailFilmActivity" />
         <activity
-            android:name=".activity.MainActivity"
-            android:configChanges="locale">
+            android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
